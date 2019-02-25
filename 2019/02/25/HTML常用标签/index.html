@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="myblog--deepin">
 <meta property="og:description" content="##HTML常用标签  本文主要介绍以下几个标签：   iframe a form button input select table  ####一、iframe  表示嵌套的浏览上下文，有效地将另一个HTML页面嵌入到当前页面中。 老标签，用于嵌套页面，一般与a标签配合使用，123&amp;lt;iframe name=xxx src=&quot;#&quot; frameborder=&quot;0&quot;&amp;gt;&amp;lt;/iframe">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T02:26:22.582Z">
+<meta property="og:updated_time" content="2019-02-25T02:32:53.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myblog--deepin">
 <meta name="twitter:description" content="##HTML常用标签  本文主要介绍以下几个标签：   iframe a form button input select table  ####一、iframe  表示嵌套的浏览上下文，有效地将另一个HTML页面嵌入到当前页面中。 老标签，用于嵌套页面，一般与a标签配合使用，123&amp;lt;iframe name=xxx src=&quot;#&quot; frameborder=&quot;0&quot;&amp;gt;&amp;lt;/iframe">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T10:28:22+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T10:32:53+08:00">
                 2019-02-25
               </time>
             
@@ -340,7 +340,7 @@
 <p>当type=”radio”时代表这是单选框，可以有许多选项，这些选项的name要设置为同一个值，否则不能实现单选。<br>使用label标签可以实现<strong>点字选框</strong>。<br>有两种方法：<br>方法一：<br><code>&lt;label&gt;&lt;input name=&quot;fruit&quot; type=&quot;radio&quot; value=&quot;apple&quot;&gt;苹果&lt;/label&gt;</code><br>方法二：<br><code>&lt;input name=&quot;fruit&quot; type=&quot;radio&quot; value=&quot;apple&quot; id=&quot;xx&quot;&gt;&lt;label for=&quot;xx&quot;&gt;苹果&lt;/label&gt;</code><br>这两种方法都是使文字与选框产生关联，使用方案一更为方便。同理，其它type类型的，也可以用这种方式产生关联。</p>
 <h4 id="六、select"><a href="#六、select" class="headerlink" title="六、select"></a>六、select</h4><p>select元素表示一个控件，提供一个选项菜单<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"group"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>_<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>第一组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>第二组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>  <span class="attr">disabled</span>&gt;</span>第三组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>  <span class="attr">selected</span>&gt;</span>第四组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>第三组中的<code>disabled</code>用于使这组不能选中。<br>第四组中的<code>selected</code>点开后默认选中的选项。<br>当首行<code>&lt;select name=&quot;group&quot; multiple&gt;</code><br>multiple表示按住Ctrl或shift可以多选。</p>
-<h4 id="七、table"><a href="#七、table" class="headerlink" title="七、table"></a>七、table</h4><p>table表示表格数据即通过二维数据表表示的信息。<br>常用标签有thead tbody tfoot<br>th：table header cell 表头<br>td：table data cell 数据<br>tr：table raw<br>表格合并用<code>border-collapse:collapse;</code><br>colgroup可以指定表格的宽高以及背景色。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">colgroup</span> <span class="attr">border</span>=<span class="string">1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">bgcolor</span>=<span class="string">red</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">200</span> <span class="attr">bgcolor</span>=<span class="string">gold</span>&gt;</span></span><br><span class="line">		....</span><br><span class="line">	<span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="七、table"><a href="#七、table" class="headerlink" title="七、table"></a>七、table</h4><p>table表示表格数据即通过二维数据表表示的信息。<br>常用标签有thead tbody tfoot<br>th：table header cell 表头<br>td：table data cell 数据<br>tr：table raw<br>表格合并用<code>border-collapse:collapse;</code><br>colgroup可以指定表格的宽高以及背景色。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">...</span><br><span class="line">	<span class="tag">&lt;<span class="name">colgroup</span> <span class="attr">border</span>=<span class="string">1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">bgcolor</span>=<span class="string">red</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">200</span> <span class="attr">bgcolor</span>=<span class="string">gold</span>&gt;</span></span><br><span class="line">		....</span><br><span class="line">	<span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>其中<code>&lt;col width=100 bgcolor=red&gt;</code>设定第一列宽度为100px，背景色为红色。<br><code>&lt;col width=200 bgcolor=gold&gt;</code>设置第二列宽度为200px，背景色为gold。<br>……</p>
 
       
@@ -375,6 +375,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/常用标签/" rel="prev" title="常用标签">
+                常用标签 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -451,7 +455,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
