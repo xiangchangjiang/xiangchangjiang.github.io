@@ -229,6 +229,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/HTML常用标签/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/25/HTML常用标签/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T10:28:22+08:00">
+                2019-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##HTML常用标签</p>
+<blockquote>
+<p>本文主要介绍以下几个标签：</p>
+</blockquote>
+<ul>
+<li>iframe</li>
+<li>a</li>
+<li>form</li>
+<li>button</li>
+<li>input</li>
+<li>select</li>
+<li>table</li>
+</ul>
+<p>####一、iframe</p>
+<ul>
+<li>表示嵌套的浏览上下文，有效地将另一个HTML页面嵌入到当前页面中。</li>
+<li>老标签，用于嵌套页面，一般与a标签配合使用，<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">name</span>=<span class="string">xxx</span> <span class="attr">src</span>=<span class="string">"#"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"xxx"</span> <span class="attr">href</span>=<span class="string">"http://qq.com"</span>&gt;</span>QQ<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"xxx"</span> <span class="attr">href</span>=<span class="string">"http://baidu.com"</span>&gt;</span>baidu<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>src中可以填写链接，也可以填写相对路径。</li>
+<li>src填写地址时，可以在页面打开一个新窗口，大小、位置均可调节。</li>
+<li>a标签中href所指向的页面在name为xxx的窗口打开。</li>
+</ol>
+<h4 id="二、a（anchor）"><a href="#二、a（anchor）" class="headerlink" title="二、a（anchor）"></a>二、a（anchor）</h4><ul>
+<li>可以创建通向其他网页、文件、同一页面内的位置、电子邮件地址或任何其他 URL 的超链接。</li>
+<li>浏览器会发出get请求，属性为download时，表明该链接是用来下载的。</li>
+</ul>
+<p><code>&lt;a href=&quot;//qq.com&quot;&gt;qq&lt;/a&gt;</code>  a标签的无协议绝对地址，继承当前页面使用的协议。</p>
+<p><code>&lt;a href=&quot;#hi&quot;&gt;nihao&lt;/a&gt;</code>    锚点，不会发送请求，只在<strong>页面内跳转</strong>。</p>
+<p><code>&lt;a href=&quot;?name=xx&quot;&gt;nihao&lt;/a&gt;</code>点击后<code>?name=xx</code>会添加到查询网址查询参数中并发起一个get请求。</p>
+<p><code>&lt;a href=&quot;javascript:alert(&quot;1&quot;)&quot;&gt;</code><strong>伪协议</strong>，相当将Javascript作为了一个协议，但javascript并不是一个协议，所以取名为伪协议，作用是点击该链接对应的内容时，在当前页面执行一段javascript代码。</p>
+<p><code>&lt;a href=&quot;javascript:;&quot;&gt;</code>实现一个点击后<strong>什么都不做</strong>的功能，不刷新、不跳转……</p>
+<p><code>&lt;a href=&quot;#&quot;&gt;</code>点击后跳转到页面顶端<br><code>&lt;a href=&quot;&quot;&gt;</code>点击后刷新页面<br><code>&lt;a href=&quot;/..&quot;&gt;link&lt;/a&gt;</code>浏览器发起GET/HTTP/1.1的请求。</p>
+<p><strong>target属性</strong>：以下四个关键字的含义<br><code>_self</code>：默认值，指当前页面加载。<br><code>_blank</code>：新窗口打开<br><code>_parent</code>:加载响应到当前框架的HTML4父框架或当前的HTML5浏览上下文的父浏览上下文。如果没有parent框架或者浏览上下文，此选项的行为方式与<em>_self</em>相同。<br><code>_top</code>: IHTML4中：加载的响应成完整的，原来的窗口，取消所有其它frame。 HTML5中：加载响应进入顶层浏览上下文（即，浏览上下文，它是当前的一个的祖先，并且没有parent）。如果没有parent框架或者浏览上下文，此选项的行为方式同<em>_self</em></p>
+<h4 id="三、form"><a href="#三、form" class="headerlink" title="三、form"></a>三、form</h4><p>表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。一般浏览器会发出post请求。<br>form中一定要有一个提交按钮<br><code>&lt;form action=&quot;users&quot; method=&quot;&quot;&gt;xxxxx&lt;&gt;</code><br>当method=”post”时，浏览器回参数放到请求的第四部分。<br>当method=”get”时，参数会出现在网址的查询参数中。<br>method=”post”也可以出现查询参数—-&gt;将action=”users”改成action=”users?xxx=yyy”。<br><strong>target属性</strong>同a标签</p>
+<h4 id="四、button"><a href="#四、button" class="headerlink" title="四、button"></a>四、button</h4><p>表示一个可点击的按钮，可以用在表单或文档其它需要使用简单标准按钮的地方。 默认情况下，HTML按钮的显示样式接近于 user agent 所在的宿主系统平台（用户操作系统）的按钮， 但你可以使用 CSS 来改变按钮的样貌。<br><code>&lt;button type=&quot;&quot;&gt;xxx&lt;/button&gt;</code><br>button中只要不出现<code>type=&quot;button&quot;</code>,button按钮就具有<strong>提交</strong>功能。type=”text”、type=”password”……可以，type=””这句不出现也可以。<br><strong>通常表单提交方式为<code>&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</code></strong></p>
+<h4 id="五、input"><a href="#五、input" class="headerlink" title="五、input"></a>五、input</h4><p>input元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据; 可以使用各种类型的输入数据和控件小部件，具体取决于设备和user agent。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"fruit"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"apple"</span>&gt;</span>苹果</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"fruit"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"banana"</span>&gt;</span>香蕉</span><br></pre></td></tr></table></figure></p>
+<p>当type=”radio”时代表这是单选框，可以有许多选项，这些选项的name要设置为同一个值，否则不能实现单选。<br>使用label标签可以实现<strong>点字选框</strong>。<br>有两种方法：<br>方法一：<br><code>&lt;label&gt;&lt;input name=&quot;fruit&quot; type=&quot;radio&quot; value=&quot;apple&quot;&gt;苹果&lt;/label&gt;</code><br>方法二：<br><code>&lt;input name=&quot;fruit&quot; type=&quot;radio&quot; value=&quot;apple&quot; id=&quot;xx&quot;&gt;&lt;label for=&quot;xx&quot;&gt;苹果&lt;/label&gt;</code><br>这两种方法都是使文字与选框产生关联，使用方案一更为方便。同理，其它type类型的，也可以用这种方式产生关联。</p>
+<h4 id="六、select"><a href="#六、select" class="headerlink" title="六、select"></a>六、select</h4><p>select元素表示一个控件，提供一个选项菜单<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"group"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>_<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>第一组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>第二组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>  <span class="attr">disabled</span>&gt;</span>第三组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>  <span class="attr">selected</span>&gt;</span>第四组<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>第三组中的<code>disabled</code>用于使这组不能选中。<br>第四组中的<code>selected</code>点开后默认选中的选项。<br>当首行<code>&lt;select name=&quot;group&quot; multiple&gt;</code><br>multiple表示按住Ctrl或shift可以多选。</p>
+<h4 id="七、table"><a href="#七、table" class="headerlink" title="七、table"></a>七、table</h4><p>table表示表格数据即通过二维数据表表示的信息。<br>常用标签有thead tbody tfoot<br>th：table header cell 表头<br>td：table data cell 数据<br>tr：table raw<br>表格合并用<code>border-collapse:collapse;</code><br>colgroup可以指定表格的宽高以及背景色。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">colgroup</span> <span class="attr">border</span>=<span class="string">1</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">bgcolor</span>=<span class="string">red</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">200</span> <span class="attr">bgcolor</span>=<span class="string">gold</span>&gt;</span></span><br><span class="line">		....</span><br><span class="line">	<span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其中<code>&lt;col width=100 bgcolor=red&gt;</code>设定第一列宽度为100px，背景色为红色。<br><code>&lt;col width=200 bgcolor=gold&gt;</code>设置第二列宽度为200px，背景色为gold。<br>……</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/W3C简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1125,7 +1287,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
