@@ -229,6 +229,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/CSS布局与定位/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/07/CSS布局与定位/" itemprop="url">CSS布局与定位</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T18:06:55+08:00">
+                2019-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS布局与定位"><a href="#CSS布局与定位" class="headerlink" title="CSS布局与定位"></a>CSS布局与定位</h2><p>本文章主要介绍：如何使用CSS做出</p>
+<ol>
+<li>左右布局</li>
+<li>左中右布局</li>
+<li>水平居中</li>
+<li>垂直居中</li>
+<li>等其他小技巧</li>
+</ol>
+<h3 id="一、左右布局"><a href="#一、左右布局" class="headerlink" title="一、左右布局"></a>一、左右布局</h3><p>1.float+clearfix<br>左右标签加上<code>float:left;</code>在左右标签的父标签上加上<code>class=&quot;clearfix&quot;</code>。<br>2.绝对定位<br> 用一个relative父元素包裹住所有元素，子元素absoulte调整位置。</p>
+<h3 id="二、左中右布局"><a href="#二、左中右布局" class="headerlink" title="二、左中右布局"></a>二、左中右布局</h3><p>1.float+margin</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E5%B7%A6%E4%B8%AD%E5%8F%B3%E5%B8%83%E5%B1%801.jpg?raw=true" alt></p>
+</blockquote>
+<p>2.float+absolute</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E5%B7%A6%E4%B8%AD%E5%8F%B3%E5%B8%83%E5%B1%802.jpg?raw=true" alt><br>资料来源于知乎Bsm</p>
+</blockquote>
+<h3 id="三、水平居中"><a href="#三、水平居中" class="headerlink" title="三、水平居中"></a>三、水平居中</h3><p>1.父级宽度确定</p>
+<ul>
+<li>子级宽度不确定：在子级样式上写<code>margin:0 30px;</code></li>
+<li>子级宽度也确定：在子级样式上写<code>margin:0 auto;</code><blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%9A%E5%AE%BD%E5%BA%A6-%E7%88%B6%E5%AE%9A%E5%84%BF%E9%9A%8F%E6%84%8F.jpg?raw=true" alt><br>ps:在CSS中，宽度和高度值最好都不要给一个定值，给定值后，内部内容有变化时容易出bug。</p>
+</blockquote>
+</li>
+</ul>
+<p>2.父级设置为<code>display:flex;</code>时。</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%9A%E7%88%B6%E7%BA%A7-flex.jpg?raw=true" alt></p>
+</blockquote>
+<p>3.子级设置有<code>display:inline,inline-*</code>时。</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%9A%E5%AD%90%E7%BA%A7.jpg?raw=true" alt></p>
+</blockquote>
+<h3 id="四、垂直居中"><a href="#四、垂直居中" class="headerlink" title="四、垂直居中"></a>四、垂直居中</h3><p>1.父级高度确定，父级设置<code>display:flex;</code>时。<br>无论子级高度是否确定都可以使用<code>align-items:center</code>设置子级相对父级垂直居中。</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%9A%E9%AB%98%E5%BA%A6-%E7%88%B6%E5%AE%9A%E5%84%BF%E9%9A%8F%E6%84%8F.jpg?raw=true" alt></p>
+</blockquote>
+<p>2.父级高度不确定，<br>在父级使用<code>padding:20px 0;</code></p>
+<ul>
+<li><p>子级高度不确定</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%9A%E9%AB%98%E5%BA%A6-%E7%88%B6%E5%AD%90%E9%83%BD%E4%B8%8D%E5%AE%9A.jpg?raw=true" alt></p>
+</blockquote>
+</li>
+<li><p>子级高度确定</p>
+<blockquote>
+<p><img src="https://github.com/xiangchangjiang/blog-generator/blob/master/images/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%9A%E9%AB%98%E5%BA%A6-%E7%88%B6%E4%B8%8D%E5%AE%9A%E5%84%BF%E5%AE%9A.jpg?raw=true" alt></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="五、其他小技巧"><a href="#五、其他小技巧" class="headerlink" title="五、其他小技巧"></a>五、其他小技巧</h3><p>1.对块级元素设置inline-block时，块级元素宽度收缩<br>块级元素不写宽度的情况下，默认宽100%（毕竟占据一行）。加入inline-block，宽度自动适合内容<br>块级元素下方会产生空隙，使用<code>vertical-align:top;</code>清除空隙。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:inline-block</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span><span class="selector-pseudo">:top</span>;</span><br></pre></td></tr></table></figure></p>
+<p>这两者一般一起使用。</p>
+<p>2.伪类<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child" title=" `xxxxxxx xxxxx:nth-child()`" target="_blank" rel="noopener"> <code>xxxxxxx xxxxx:nth-child()</code></a><br>可以在一个列表中指定选择任意一项，或所有奇数（odd）项、偶数（even）项……</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/HTML常用标签/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1285,7 +1457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
