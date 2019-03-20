@@ -229,6 +229,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/JS里的数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/20/JS里的数据类型/" itemprop="url">JS里的数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-20T15:42:05+08:00">
+                2019-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JS-里的数据类型"><a href="#JS-里的数据类型" class="headerlink" title="JS 里的数据类型"></a>JS 里的数据类型</h2><p>这篇文章包括以下内容：</p>
+<ul>
+<li>JS的七种数据类型</li>
+<li>string  字符串</li>
+<li>boolean 布尔</li>
+<li>null与undefined的区别</li>
+<li>object  对象的定义以及属性遍历</li>
+<li>JavaScript的两个bug</li>
+</ul>
+<h4 id="一、JS的七种数据类型"><a href="#一、JS的七种数据类型" class="headerlink" title="一、JS的七种数据类型"></a>一、JS的七种数据类型</h4><p>-number string boolean（原始类型）<br>-undefined null （特殊）<br>-symbol（es6）<br>-object(包含array function)<br>使用<code>typeof</code>可以查看所属类型</p>
+<h4 id="二、string-字符串"><a href="#二、string-字符串" class="headerlink" title="二、string  字符串"></a>二、string  字符串</h4><p>1.’’空字符串长度为0，’ ‘（空格）长度为1<br>2.多行字符串推荐写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> s2=<span class="string">'12345'</span>+</span><br><span class="line">    	<span class="string">"67890"</span>+</span><br><span class="line">    	<span class="string">"xxxxx"</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 三、boolean 布尔</span></span><br><span class="line"><span class="string">六个值为false的布尔值，只有这六个，其他值都为true。</span></span><br><span class="line"><span class="string">-undefined</span></span><br><span class="line"><span class="string">-null</span></span><br><span class="line"><span class="string">-false</span></span><br><span class="line"><span class="string">-0</span></span><br><span class="line"><span class="string">-NaN</span></span><br><span class="line"><span class="string">-""或''（空字符串）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 四、null与undefined</span></span><br><span class="line"><span class="string">语法效果几乎没有区别</span></span><br><span class="line"><span class="string">null===undefined//false</span></span><br><span class="line"><span class="string">null==undefined//true</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">##### 区别</span></span><br><span class="line"><span class="string">Number(null)//0</span></span><br><span class="line"><span class="string">Number(undefined)//NaN</span></span><br><span class="line"><span class="string">5+null//5</span></span><br><span class="line"><span class="string">5+undefined//NaN</span></span><br><span class="line"><span class="string">-变量没有赋值——undefined</span></span><br><span class="line"><span class="string">-一个对象object，暂时不想给值——null</span></span><br><span class="line"><span class="string">一个非对象，暂时不想给值——undefined</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 五、object  对象</span></span><br><span class="line"><span class="string">对象就是一组“键值对”（key-value）的集合（哈希表），是一种无序的复合数据集合。</span></span><br><span class="line"><span class="string">所有key的类型都为string（字符串），''（空字符串）也可以为key值。</span></span><br><span class="line"><span class="string">对象中的key若不加引号，命名规则同标识符。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">##### 删除对象的属性</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="string">'name'</span>:<span class="string">'frank'</span>,<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.loli.net/2019/03/20/5c91e5314fac7.jpg" alt><br>使用delete obj（’xxx’）删除对象属性时，对象的key和value都会被删除。</p>
+<p><img src="https://i.loli.net/2019/03/20/5c91e662ed33d.jpg" alt><br>将对象的属性对应的值设为undefined，则只删除对象key对应的value值。</p>
+<h5 id="使用for…in-遍历对象的属性"><a href="#使用for…in-遍历对象的属性" class="headerlink" title="使用for…in 遍历对象的属性"></a>使用for…in 遍历对象的属性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(obj[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>使用for…in 遍历需要注意两点</p>
+<blockquote>
+<ol>
+<li>它遍历的是对象所有可遍历（enumerable）的属性，会跳过不可遍历的属性。</li>
+<li>它不仅遍历对象自身的属性，还遍历继承的属性。</li>
+</ol>
+</blockquote>
+<h4 id="六、JavaScript的两个bug"><a href="#六、JavaScript的两个bug" class="headerlink" title="六、JavaScript的两个bug"></a>六、JavaScript的两个bug</h4><ul>
+<li>JavaScript 对 UTF-16 的支持是不完整的，由于历史原因（JS出生早），只支持两字节的字符，不支持四字节的字符。</li>
+<li><code>function=f(){}</code>typeof f     //“function” 理论上应为”object”,JS中只有七种数据类型，这七种里不包括”function”</li>
+</ul>
+<h3 id="参考资料：JavaScript-标准参考教程（alpha），by-阮一峰"><a href="#参考资料：JavaScript-标准参考教程（alpha），by-阮一峰" class="headerlink" title="参考资料：JavaScript 标准参考教程（alpha），by 阮一峰"></a>参考资料：<a href="http://javascript.ruanyifeng.com/" title="JavaScript 标准参考教程（alpha）" target="_blank" rel="noopener">JavaScript 标准参考教程（alpha），by 阮一峰</a></h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/CSS布局与定位/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1457,7 +1601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
