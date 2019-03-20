@@ -229,6 +229,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/JS里的数据类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/20/JS里的数据类型转换/" itemprop="url">JS里的数据类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-20T23:32:01+08:00">
+                2019-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JS-里的数据类型转换"><a href="#JS-里的数据类型转换" class="headerlink" title="JS 里的数据类型转换"></a>JS 里的数据类型转换</h2><ul>
+<li>这篇文章包括以下内容：</li>
+<li>number转string</li>
+<li>其它类型转布尔值</li>
+<li>其它类型转number</li>
+<li>JavaScript数据存储</li>
+<li>深拷贝和浅拷贝—笔记</li>
+</ul>
+<h4 id="一、number转string"><a href="#一、number转string" class="headerlink" title="一、number转string"></a>一、number转string</h4><p>三种方法：</p>
+<ol>
+<li><code>(xx).toString()</code></li>
+<li><code>window.String(xx)</code>可以简写为<code>String(xx)</code></li>
+<li><code>xx+&#39;&#39;</code></li>
+</ol>
+<p>这里typeof(xx)=”number”,推荐使用第三个方法。</p>
+<h4 id="二、其它类型转化成布尔值"><a href="#二、其它类型转化成布尔值" class="headerlink" title="二、其它类型转化成布尔值"></a>二、其它类型转化成布尔值</h4><p>两种方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>()</span><br><span class="line">!!()</span><br></pre></td></tr></table></figure></p>
+<pre><code>Boolean(0)
+false
+Boolean(1)
+true
+Boolean(&apos;0&apos;)
+true
+Boolean(&apos;&apos;)
+false
+!!1
+true
+!!0
+false
++&apos;-1&apos;
+-1
+</code></pre><p>falsy值<br>六个值为false的布尔值，只有这六个，其他值都为true。<br>-undefined<br>-null<br>-false<br>-0<br>-NaN<br>-“”或’’（空字符串）</p>
+<h4 id="三、其它类型转换成number"><a href="#三、其它类型转换成number" class="headerlink" title="三、其它类型转换成number"></a>三、其它类型转换成number</h4><p>五种方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Numbera(<span class="string">'1'</span>)<span class="comment">//1</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>,<span class="number">10</span>)<span class="comment">//1  10表示十进制</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'1.23'</span>)<span class="comment">//1.23</span></span><br><span class="line"><span class="string">'1'</span><span class="number">-0</span><span class="comment">//1</span></span><br><span class="line">+<span class="string">'-1'</span><span class="comment">//-1</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="四、JavaScript数据存储"><a href="#四、JavaScript数据存储" class="headerlink" title="四、JavaScript数据存储"></a>四、JavaScript数据存储</h4><p>数字64位<br>字符16位<br>Stack栈 Heap堆<br>值 简单 存stack //string，除了object<br>复杂 存heap，地址存在stack(引用)</p>
+<h4 id="五、深拷贝和浅拷贝—笔记"><a href="#五、深拷贝和浅拷贝—笔记" class="headerlink" title="五、深拷贝和浅拷贝—笔记"></a>五、深拷贝和浅拷贝—笔记</h4><p>栈（stack）为自动分配的内存空间，它由系统自动释放；<br>堆（heap）则是动态分配的内存，大小不定也不会自动释放。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/20/JS里的数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1441,128 +1594,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/开博大吉/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiangchangjiang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="myblog--deepin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/开博大吉/" itemprop="url">开博大吉</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T11:00:41+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1606,7 +1644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
