@@ -310,9 +310,30 @@
 <p>window 就是一个哈希表，有很多属性。</p>
 <p>window 的属性就是全局变量。</p>
 <p>这些全局变量分为两种：</p>
-<p>一种是 ECMAScript 规定的</p>
-<p>global.parseInt<br>global.parseFloat<br>global.Number<br>global.String<br>global.Boolean<br>global.Object<br>一种是浏览器自己加的属性</p>
-<p>window.alert<br>window.prompt<br>window.comfirm<br>window.console.log<br>window.console.dir<br>window.document<br>window.document.createElement<br>window.document.getElementById</p>
+<ul>
+<li><p>一种是 ECMAScript 规定的</p>
+<ul>
+<li>global.parseInt</li>
+<li>global.parseFloat</li>
+<li>global.Number</li>
+<li>global.String</li>
+<li>global.Boolean</li>
+<li>global.Object</li>
+</ul>
+</li>
+<li><p>一种是浏览器自己加的属性</p>
+<ul>
+<li>window.alert</li>
+<li>window.prompt</li>
+<li>window.comfirm</li>
+<li>window.console.log</li>
+<li>window.console.dir</li>
+<li>window.document</li>
+<li>window.document.createElement</li>
+<li>window.document.getElementById</li>
+</ul>
+</li>
+</ul>
 <p>更多内容可以搜索 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window" title="window MDN" target="_blank" rel="noopener">window MDN</a></p>
 <h4 id="二、几个全局函数"><a href="#二、几个全局函数" class="headerlink" title="二、几个全局函数"></a>二、几个全局函数</h4><h5 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n1 = <span class="number">1</span></span><br><span class="line"><span class="keyword">typeof</span>(n1)<span class="comment">//'number'  简单类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n2 = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">typeof</span>(n2)<span class="comment">//'object'  对象</span></span><br></pre></td></tr></table></figure>
 <h5 id="简单类型为什么也能使用toString-等属于对象的属性呢？"><a href="#简单类型为什么也能使用toString-等属于对象的属性呢？" class="headerlink" title="简单类型为什么也能使用toString()等属于对象的属性呢？"></a>简单类型为什么也能使用toString()等属于对象的属性呢？</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n1 = <span class="number">1</span></span><br><span class="line">n1.toString()<span class="comment">//"1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*******当浏览器读到n1.toString()时*******/</span></span><br><span class="line">temp=<span class="keyword">new</span> <span class="built_in">Number</span>(n1)</span><br><span class="line"><span class="keyword">return</span> temp.toString()</span><br><span class="line"><span class="comment">/*******当浏览器读到n1.toString()时*******/</span></span><br><span class="line"></span><br><span class="line">值返回给n1后temp就被回收了</span><br><span class="line">所以给n1添加属性时不会报错,但是读取时返回<span class="literal">undefined</span></span><br><span class="line">n1.xxx = <span class="number">2</span>           n1.xxx=<span class="number">2</span>完成以后temp已经回收</span><br><span class="line">n1.xxx<span class="comment">//undefined    n1.xxx时又生成了一个临时对象temp，这个对象里没有xxx属性</span></span><br></pre></td></tr></table></figure>
