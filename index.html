@@ -229,6 +229,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/31/设计一个简单的jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/31/设计一个简单的jQuery/" itemprop="url">设计一个简单的jQuery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T16:28:15+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="设计一个简单的jQuery"><a href="#设计一个简单的jQuery" class="headerlink" title="设计一个简单的jQuery"></a>设计一个简单的jQuery</h3><p>设计一个jQuery实现以下功能：</p>
+<blockquote>
+<p>window.jQuery = ???<br>window.$ = jQuery</p>
+</blockquote>
+<blockquote>
+<p>var $div = $(‘div’)<br>$div.addClass(‘red’) // 可将所有 div 的 class 添加一个 red<br>$div.setText(‘hi’) // 可将所有 div 的 textContent 变为 hi</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span>(<span class="params">tagName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> nodes = &#123;&#125;</span><br><span class="line">  temp = <span class="built_in">document</span>.getElementsByTagName(tagName)</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; temp.length; i++) &#123;</span><br><span class="line">    nodes[i] = temp[i]</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.length = temp.length</span><br><span class="line">  nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">classes</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nodes.length; i++)&#123;</span><br><span class="line">      nodes[i].classList.add(classes)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = <span class="function"><span class="keyword">function</span>(<span class="params">xx</span>) </span>&#123;</span><br><span class="line">    node[<span class="number">0</span>].textContent=xx</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> nodes</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.$ = jQuery</span><br><span class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>)</span><br><span class="line">$div.addClass(<span class="string">'red'</span>) <span class="comment">// 可将所有 div 的 class 添加一个 red</span></span><br><span class="line">$div.setText(<span class="string">'hi'</span>) <span class="comment">// 可将所有 div 的 textContent 变为 hi</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -339,7 +465,7 @@
 <li>大概知道如何对 div 进行增删改查即可。</li>
 </ol>
 </blockquote>
-<h3 id="四、几个重要的知识点"><a href="#四、几个重要的知识点" class="headerlink" title="四、几个重要的知识点"></a>四、几个重要的知识点</h3><p>1.nextSibling<br>2.textContent和innerText的区别 面试<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Node.textContent 属性表示一个节点及其后代的文本内容。</span><br><span class="line">Internet Explorer 引入了 node.innerText。意图类似，但有以下区别：</span><br><span class="line"></span><br><span class="line">textContent 会获取所有元素的内容，包括 &lt;script&gt; 和 &lt;style&gt; 元素，然而 innerText 不会。</span><br><span class="line">innerText 受 CSS 样式的影响，并且不会返回隐藏元素的文本，而textContent会。</span><br><span class="line">由于 innerText 受 CSS 样式的影响，它会触发重排（reflow），但textContent 不会。</span><br><span class="line">与 textContent 不同的是, 在 Internet Explorer (对于小于等于 IE11 的版本) 中对 innerText 进行修改， </span><br><span class="line">不仅会移除当前元素的子节点，而且还会永久性地破坏所有后代文本节点（所以不可能再次将节点再次插入到任何其他元素或同一元素中）</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、几个重要的知识点"><a href="#四、几个重要的知识点" class="headerlink" title="四、几个重要的知识点"></a>四、几个重要的知识点</h3><p>1.nextSibling    获取的可能是文本（回车、空格、文字）<br>2.textContent和innerText的区别 面试<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Node.textContent 属性表示一个节点及其后代的文本内容。</span><br><span class="line">Internet Explorer 引入了 node.innerText。意图类似，但有以下区别：</span><br><span class="line"></span><br><span class="line">textContent 会获取所有元素的内容，包括 &lt;script&gt; 和 &lt;style&gt; 元素，然而 innerText 不会。</span><br><span class="line">innerText 受 CSS 样式的影响，并且不会返回隐藏元素的文本，而textContent会。</span><br><span class="line">由于 innerText 受 CSS 样式的影响，它会触发重排（reflow），但textContent 不会。</span><br><span class="line">与 textContent 不同的是, 在 Internet Explorer (对于小于等于 IE11 的版本) 中对 innerText 进行修改， </span><br><span class="line">不仅会移除当前元素的子节点，而且还会永久性地破坏所有后代文本节点（所以不可能再次将节点再次插入到任何其他元素或同一元素中）</span><br></pre></td></tr></table></figure></p>
 <p>3.nodeType 1，3 面试<br>4.cloneNode<br>5.isEqualNode和isSameNode<br>6.normalize()</p>
 <h3 id="DOM-API详细内容及应用举例请参考："><a href="#DOM-API详细内容及应用举例请参考：" class="headerlink" title="DOM API详细内容及应用举例请参考："></a>DOM API详细内容及应用举例请参考：</h3><p><a href="http://javascript.ruanyifeng.com/dom/node.html#toc0" title="JavaScript 标准参考教程（alpha），by 阮一峰" target="_blank" rel="noopener">JavaScript 标准参考教程（alpha），by 阮一峰</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Introduction" title="DOM MDN" target="_blank" rel="noopener">DOM MDN</a></p>
 
@@ -1568,131 +1694,6 @@ false
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/deepin第四篇博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiangchangjiang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="myblog--deepin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/deepin第四篇博客/" itemprop="url">deepin第四篇博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T13:43:19+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用 Hexo + GitHub 可以轻松搞出一个好看的博客<br>以下是步骤。</p>
-<p>进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 瞎搞。以后所有的教程第一步都是「进入一个安全的目录，别在根目录瞎搞」，只有 ~ 里面的目录是你能碰的！<br>在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名）<br>npm install -g hexo-cli，安装 Hexo<br>hexo init myBlog<br>cd myBlog<br>npm i<br>hexo new 开博大吉，你会看到一个 md 文件的路径<br>Windows 的路径中的 \ 需要变成 / 才行哦<br>Windows 的路径中的 \ 需要变成 / 才行哦</p>
-<p>Windows 的路径中的 \ 需要变成 / 才行哦<br>Windows 的路径中的 \ 需要变成 / 才行哦<br>Windows 的路径中的 \ 需要变成 / 才行哦<br>运行 start source/_post/开博大吉.md 来编辑这个 md 文件，内容自己想（Ubuntu 系统用 xdg-open xxxxxxxxxxxxxxxxxxx.md 命令）</p>
-<p>举例：如果 Windows 提示的是 INFO created: ~\Desktop\myBlog\source_posts\开博大吉.md<br>那么你的命令就应该是 start “~/Desktop/myBlog/source/_posts/开博大吉.md” 注意引号和斜杠，如果路径里没有空格，就不需要引号。<br>内容示例</p>
-<hr>
-<h2 id="title-开博大吉"><a href="#title-开博大吉" class="headerlink" title="  title: 开博大吉"></a>  title: 开博大吉</h2><h1 id="哈哈"><a href="#哈哈" class="headerlink" title="哈哈"></a>哈哈</h1><p>  我的博客开通啦<br>start _config.yml，编辑网站配置<br>把第 6 行的 title 改成你想要的名字<br>把第 9 行的 author 改成你的大名<br>把最后一行的 type 改成 type: git<br>在最后一行后面新增一行，左边与 type 平齐，加上一行 repo: 仓库地址 （请将仓库地址改为「你的用户名.github.io」对应的仓库地址，仓库地址以 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: 开头你知道吧？不知道？不知道的话现在你知道了）<br>第 4 步的 repo: 后面有个空格，不要眼瞎。<br>npm install hexo-deployer-git –save，安装 git 部署插件<br>hexo deploy<br>进入「你的用户名.github.io」对应的 repo，打开 GitHub Pages 功能，如果已经打开了，你应该会看到一个预览链接<br>用浏览器访问「预览链接/index.html」就应该看到了你的博客！（GitHub Pages 存在延迟，如果没看到，过三分钟再刷新看看）<br>第二篇博客<br>hexo new 第二篇博客<br>复制显示的路径，使用 start 路径 来编辑它<br>hexo generate<br>hexo deploy<br>去看你的博客，应该能看到第二篇博客了<br>换主题<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集<br>随便找一个主题，进入主题的 GitHub 首页，比如我找的是 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a><br>复制它的 SSH 地址或 HTTPS 地址，假设地址为 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:iissnan/hexo-theme-next.git<br>cd themes<br>git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:iissnan/hexo-theme-next.git<br>cd ..<br>将 _config.yml 的第 75 行改为 theme: hexo-theme-next，保存<br>hexo generate<br>hexo deploy<br>等一分钟，然后刷新你的博客页面，你会看到一个新的外观。如果不喜欢这个主题，就回到第 1 步，重选一个主题。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1743,7 +1744,7 @@ false
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
