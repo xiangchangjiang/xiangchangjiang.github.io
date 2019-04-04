@@ -229,6 +229,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/CSS宽度与高度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiangchangjiang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog--deepin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/CSS宽度与高度/" itemprop="url">CSS宽度与高度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-05T04:25:55+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="css宽度和高度"><a href="#css宽度和高度" class="headerlink" title="css宽度和高度"></a>css宽度和高度</h2><p>这篇文章包括以下内容：</p>
+<ul>
+<li>几个知识点</li>
+<li>多行文本的文本内容两端对齐方法</li>
+<li>单行文本两端对齐的方法（套路）</li>
+<li>把多个块元素水平排列</li>
+<li>浏览器对中文和英文处理的区别</li>
+<li>文字溢出</li>
+<li>文字垂直居中</li>
+<li>margin合并</li>
+<li>怎样使div中的div绝对居中</li>
+<li>实现一个一比一的div</li>
+</ul>
+<h4 id="几个知识点"><a href="#几个知识点" class="headerlink" title="几个知识点"></a>几个知识点</h4><ul>
+<li>如果div中只有一个内联元素，那么div的高度就是这个内联元素这一行的行高（line-height）。</li>
+<li>内联元素的宽度由内部文本字数决定，高度由文本行高决定,所以给内联元素设置宽度和高度是没有意义的。margin/padding/border只影响内联元素的宽度，不影响内联元素的高度。</li>
+<li>空格的宽度和高度由字体设计师决定，行高（line-height）与字体大小（font-size）之间的关系也是由字体设计师决定。不同的字体会有不同的呈现。</li>
+<li><code>&amp;nbsp;</code>:表示空格(no break space)</li>
+<li><code>br</code>:换行</li>
+<li>css中<code>height:100vh;</code>表示设置当前高度为视口高度（全屏）</li>
+</ul>
+<h4 id="多行文本的文本内容两端对齐方法"><a href="#多行文本的文本内容两端对齐方法" class="headerlink" title="多行文本的文本内容两端对齐方法"></a>多行文本的文本内容两端对齐方法</h4><p><code>text-align:justify</code><br><a href="http://www.iciba.com/justify" title="(justify有调整（打印文本）；使齐行；使每行排齐的意思）" target="_blank" rel="noopener">(justify有调整（打印文本）；使齐行；使每行排齐的意思）</a></p>
+<h4 id="单行文本两端对齐的方法（套路）"><a href="#单行文本两端对齐的方法（套路）" class="headerlink" title="单行文本两端对齐的方法（套路）"></a>单行文本两端对齐的方法（套路）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML:</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>联系方式<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid green;				  <span class="comment">/*调试用  */</span></span><br><span class="line">  <span class="attribute">display</span>:inline-block;					<span class="comment">/*必填 */</span></span><br><span class="line">  <span class="attribute">text-align</span>:justify;         			 <span class="comment">/*必填 */</span></span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100px</span>;							 <span class="comment">/*必填，宽度可自定义 但需大于文本内容 */</span></span><br><span class="line">  <span class="attribute">line-height</span>:<span class="number">20px</span>;						<span class="comment">/*设置标签 居中用  */</span></span><br><span class="line">  <span class="attribute">height</span>:<span class="number">20px</span>;							 <span class="comment">/*设置标签居中 大小与line-height一样  */</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;							<span class="comment">/*必填 */</span></span><br><span class="line">  <span class="attribute">display</span>:inline-block;					<span class="comment">/*必填  */</span></span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100%</span>;							<span class="comment">/*必填 */</span></span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid pink;				<span class="comment">/*调试用  在span上设置overflow:hidden;即可隐藏*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="把多个块元素水平排列"><a href="#把多个块元素水平排列" class="headerlink" title="把多个块元素水平排列"></a>把多个块元素水平排列</h4><p>把这些块元素设置左浮动；在它们共同的父级上加一个clearfix类。<br>不添加clearfix类会导致父级无法包住子级元素，在父级上加一个border即可看出区别。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">'clearfix'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>选项6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ================clearfix写法======================= */</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* ================clearfix写法======================= */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span>&#123;<span class="attribute">border</span>:<span class="number">1px</span> solid green;&#125;</span><br><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span>&#123;</span><br><span class="line">  <span class="attribute">float</span>:left;</span><br><span class="line">  <span class="attribute">list-style</span>:none;			<span class="comment">/*去除前面的小黑点*/</span></span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="浏览器对中文和英文处理的区别"><a href="#浏览器对中文和英文处理的区别" class="headerlink" title="浏览器对中文和英文处理的区别"></a>浏览器对中文和英文处理的区别</h4><p>对于中文，浏览器采用响应式布局，文档流(Nomal Flow)，会根据页面宽度自动调整换行。<br>对于英文，如果有一个比较长的单词，长度超过了浏览器当前显示窗口的宽度，也不会换行。可以在长单词中加连字符<code>-</code>使换行，也可以给css一个样式<code>word-break:break all;</code>将这个单词拆成字母。例子：热干面。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'chinese'</span>&gt;</span>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'english'</span>&gt;</span>heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="文字溢出"><a href="#文字溢出" class="headerlink" title="文字溢出"></a>文字溢出</h4><h5 id="1-单行文字溢出：文字内容很多，正常会换行，现在用一行来放这些文字，多出的文字用省略号表示。"><a href="#1-单行文字溢出：文字内容很多，正常会换行，现在用一行来放这些文字，多出的文字用省略号表示。" class="headerlink" title="1.单行文字溢出：文字内容很多，正常会换行，现在用一行来放这些文字，多出的文字用省略号表示。"></a>1.单行文字溢出：文字内容很多，正常会换行，现在用一行来放这些文字，多出的文字用省略号表示。</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"singleLineText"</span>&gt;</span></span><br><span class="line">  这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#singleLineText</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">white-space</span>:nowrap;			<span class="comment">/*设置不换行*/</span></span><br><span class="line">  </span><br><span class="line">  <span class="attribute">overflow</span>:hidden;				<span class="comment">/*设置多出部分隐藏*/</span></span><br><span class="line">  <span class="attribute">text-overflow</span>:ellipsis;		<span class="comment">/*用省略号表示*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.iciba.com/ellipsis" title="ellipsis" target="_blank" rel="noopener">ellipsis</a>:省略</p>
+<h5 id="2-多行文字溢出-套路但是此处方法IE不兼容、可以搜索’multi-line-text-ellipsis’有兼容IE的方法）"><a href="#2-多行文字溢出-套路但是此处方法IE不兼容、可以搜索’multi-line-text-ellipsis’有兼容IE的方法）" class="headerlink" title="2.多行文字溢出(套路但是此处方法IE不兼容、可以搜索’multi line text ellipsis’有兼容IE的方法）"></a>2.多行文字溢出(套路但是此处方法IE不兼容、可以搜索’multi line text ellipsis’有兼容IE的方法）</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"multiLineText"</span>&gt;</span></span><br><span class="line">  这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#multiLineText</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">  <span class="attribute">display</span>:-webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>:<span class="number">2</span>;						<span class="comment">/*设置行数*/</span></span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>:vertical;</span><br><span class="line">  <span class="attribute">overflow</span>:hidden; </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文字垂直居中"><a href="#文字垂直居中" class="headerlink" title="文字垂直居中"></a>文字垂直居中</h4><h5 id="方法：用开发者工具测出当前行高，设置padding值，撑出所需宽度，如果当前行高是奇数，可以用line-height自定义一个行高，再用padding撑。"><a href="#方法：用开发者工具测出当前行高，设置padding值，撑出所需宽度，如果当前行高是奇数，可以用line-height自定义一个行高，再用padding撑。" class="headerlink" title="方法：用开发者工具测出当前行高，设置padding值，撑出所需宽度，如果当前行高是奇数，可以用line-height自定义一个行高，再用padding撑。"></a>方法：用开发者工具测出当前行高，设置padding值，撑出所需宽度，如果当前行高是奇数，可以用line-height自定义一个行高，再用padding撑。</h5><h5 id="注意：尽量不要直接设置height-40px-当标签内部文本内容变化，尤其是增多到多行显示时，文字会覆盖其它区域的内容，两者重合，导致出bug。"><a href="#注意：尽量不要直接设置height-40px-当标签内部文本内容变化，尤其是增多到多行显示时，文字会覆盖其它区域的内容，两者重合，导致出bug。" class="headerlink" title="注意：尽量不要直接设置height:40px;,当标签内部文本内容变化，尤其是增多到多行显示时，文字会覆盖其它区域的内容，两者重合，导致出bug。"></a>注意：尽量不要直接设置<code>height:40px;</code>,当标签内部文本内容变化，尤其是增多到多行显示时，文字会覆盖其它区域的内容，两者重合，导致出bug。</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//要求：行高为40px，内容垂直居中  </span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"verticalCenter"</span>&gt;</span></span><br><span class="line">   这是一段文字这是一段文字这是一段文字这是一段文字</span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#verticalCenter</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;				<span class="comment">/*border会算在行高中，此处为调试用，调试结束记得删除，使用outline也能画出边框，且不算在行高中*/</span></span><br><span class="line">  <span class="attribute">line-height</span>:<span class="number">22px</span>;					<span class="comment">/*默认高度不合适，可以手动设置一个行高，例子中默认行高为21px*/</span></span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">9px</span> <span class="number">0</span>;					<span class="comment">/*用padding撑出所需宽度*/</span></span><br><span class="line">  <span class="attribute">text-align</span>:center;				<span class="comment">/*设置水平居中*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="margin合并"><a href="#margin合并" class="headerlink" title="margin合并"></a>margin合并</h4><h5 id="1-如果父元素没有什么东西（border-padding）挡住子元素的margin，那么子元素的外边距会和父元素的外边距合并。相当于此时用margin撑不开父元素的高度。如果父元素只挡住了上边（border-top-padding-top）没挡住下边-则上边不合并，会被撑开，下边仍然合并。"><a href="#1-如果父元素没有什么东西（border-padding）挡住子元素的margin，那么子元素的外边距会和父元素的外边距合并。相当于此时用margin撑不开父元素的高度。如果父元素只挡住了上边（border-top-padding-top）没挡住下边-则上边不合并，会被撑开，下边仍然合并。" class="headerlink" title="1.如果父元素没有什么东西（border/padding）挡住子元素的margin，那么子元素的外边距会和父元素的外边距合并。相当于此时用margin撑不开父元素的高度。如果父元素只挡住了上边（border-top/padding-top）没挡住下边,则上边不合并，会被撑开，下边仍然合并。"></a>1.如果父元素没有什么东西（border/padding）挡住子元素的margin，那么子元素的外边距会和父元素的外边距合并。相当于此时用margin撑不开父元素的高度。如果父元素只挡住了上边（border-top/padding-top）没挡住下边,则上边不合并，会被撑开，下边仍然合并。</h5><h5 id="2-在父元素css设置overflow-hidden-也可以阻止margin合并。-不推荐使用，因为加了之后此时父元素内所有内容都不能超出父元素范围，这时如果需要做一个悬浮，也不能正常显示。"><a href="#2-在父元素css设置overflow-hidden-也可以阻止margin合并。-不推荐使用，因为加了之后此时父元素内所有内容都不能超出父元素范围，这时如果需要做一个悬浮，也不能正常显示。" class="headerlink" title="2.在父元素css设置overflow:hidden;也可以阻止margin合并。(不推荐使用，因为加了之后此时父元素内所有内容都不能超出父元素范围，这时如果需要做一个悬浮，也不能正常显示。)"></a>2.在父元素css设置<code>overflow:hidden;</code>也可以阻止margin合并。(不推荐使用，因为加了之后此时父元素内所有内容都不能超出父元素范围，这时如果需要做一个悬浮，也不能正常显示。)</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dad"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"son"</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">2px</span> solid black;</span><br><span class="line">  <span class="attribute">margin</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.dad</span>&#123;</span><br><span class="line">  <span class="attribute">outline</span>:<span class="number">3px</span> solid pink;			<span class="comment">/*outline只方便调试，不起到挡住的作用，border有挡住的作用*/</span></span><br><span class="line">  <span class="attribute">padding-top</span>:<span class="number">1px</span>;					<span class="comment">/*父元素挡住了上边，上边不合并*/</span></span><br><span class="line">  <span class="comment">/* overflow:hidden; */</span>			<span class="comment">/*也可以阻止margin合并*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">10px</span> solid green</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="文档流：内联元素从左到右依次排列，若空间不够则换行接着从左到右排列。块元素则占据一行，从上往下依次排列。"><a href="#文档流：内联元素从左到右依次排列，若空间不够则换行接着从左到右排列。块元素则占据一行，从上往下依次排列。" class="headerlink" title="文档流：内联元素从左到右依次排列，若空间不够则换行接着从左到右排列。块元素则占据一行，从上往下依次排列。"></a>文档流：内联元素从左到右依次排列，若空间不够则换行接着从左到右排列。块元素则占据一行，从上往下依次排列。</h5><h5 id="脱离文档流：父元素计算高度时不要把脱离文档流的元素高度算进去。"><a href="#脱离文档流：父元素计算高度时不要把脱离文档流的元素高度算进去。" class="headerlink" title="脱离文档流：父元素计算高度时不要把脱离文档流的元素高度算进去。"></a>脱离文档流：父元素计算高度时不要把脱离文档流的元素高度算进去。</h5><p>脱离文档流方法：<br>1.<code>float:left;</code><br>2.<code>position:absolute;</code>或<code>position:fixed;</code><br>注意，相对定位<code>position:relative;</code>并没有脱离文档流，相对定位的元素还是占据原来文档流中的位置，然后相对这个位置作一定的偏移。<br>div的高度是有其内部文档流中元素高度总和决定（只是决定，并不一定相等）。</p>
+<h4 id="怎样使div中的div绝对居中"><a href="#怎样使div中的div绝对居中" class="headerlink" title="怎样使div中的div绝对居中"></a>怎样使div中的div绝对居中</h4><h5 id="如果一定要求设置父元素高度为500px"><a href="#如果一定要求设置父元素高度为500px" class="headerlink" title="如果一定要求设置父元素高度为500px"></a>如果一定要求设置父元素高度为500px</h5><p><code>height:100vh;</code>设置当前高度为视口高度（全屏）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"xx"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"x"</span>&gt;</span>adfgggjjj mmmmm ddddddd nnnnnnnnnnn kkkkkkkkk llllllllllll<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#xx</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">3px</span> solid black;</span><br><span class="line">  <span class="attribute">display</span>:flex;							<span class="comment">/*必填  注意：这种方法IE不兼容*/</span></span><br><span class="line">  <span class="attribute">align-items</span>:center;					<span class="comment">/*必填*/</span></span><br><span class="line">  <span class="attribute">justify-content</span>:center;				<span class="comment">/*必填*/</span></span><br><span class="line">  <span class="attribute">height</span>:<span class="number">500px</span>;							<span class="comment">/*设定到所需高度 */</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#x</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">3px</span> solid green;</span><br><span class="line">  <span class="attribute">text-align</span>:center;					<span class="comment">/*可以设置文本内容相对于x水平居中*/</span></span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;							<span class="comment">/*与内部内容有关，内容较长，则会占据父级宽度100%，在这里可以设置也可以不设置*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实现一个一比一的div"><a href="#实现一个一比一的div" class="headerlink" title="实现一个一比一的div"></a>实现一个一比一的div</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.one</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;		<span class="comment">/*调试用，之后记得删除*/</span></span><br><span class="line">  <span class="attribute">padding-top</span>:<span class="number">100%</span>;			<span class="comment">/*此时padding-top的值等于当前窗口的宽度，整个div的height为0*/</span></span><br><span class="line">  <span class="comment">/*padding-bottom:50%;		用padding-bottom同理*/</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://js.jirengu.com/lacaxezike/3/edit" target="_blank" rel="noopener">例子</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/31/设计一个简单的jQuery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1568,134 +1730,6 @@ false
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/命令行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiangchangjiang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="myblog--deepin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/18/命令行/" itemprop="url">命令行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T19:30:25+08:00">
-                2019-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h2><p>  1.简介<br>    linux下最常用的命令。ls是list的缩写（一般省去元音字母），用来打印出当前目录下文件和目录的清单。如果ls指定其他路径，那么就会显示指定路径里的文件及目录清单。 通过ls命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等。<br>  2.格式<br>    ls [选项] [路径]<br>  3.常用参数<br>    -a，-all的缩写 列出目录下所有文件，包括以 . 开头的隐藏文件。<br>    -l，使用长列表格式显示文件，列出文件权限、文件类型、所有者。<br>    -h，-human-readable以容易理解的格式列出文件大小。   </p>
-<h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><p>  1.简介<br>    cat 两个主要功能：</p>
-<pre><code>1. 文本文件查看    cat 后面直接接文件名。
-2. 将多个文件内容填加到目标文件中  cat file1 file2 &gt; target_file
-</code></pre><p>  2.格式<br>    cat [选项] [路径]<br>  3.常用参数<br>    -n，-number 对输出的所有行编号。</p>
-<h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><p>  1.简介<br>    用来移动或者重命名文件和目录。<br>  2.格式<br>    移动：  mv [选项] 源文件或目录  目标文件或目录<br>    重命名：mv test.log test1.txt  将test.log重命名为test.txt<br>  3.常用参数<br>    -b，若需覆盖文件，则覆盖前先行备份。<br>    -f，-force 强制，如果目标文件已经存在，不会询问而直接覆盖。<br>    -i，若目标文件 (destination) 已经存在时，就会询问是否覆盖。</p>
-<h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><p>  1.简介<br>    用来修改文件时间戳，或者新建一个不存在的文件。<br>  2.格式<br>    touch [选项] 文件<br>  3.常用参数<br>    -t，touch -t YYYYMMDDHHMM.SS filename  将文件上的时间设置为特定的日期和时间<br>    -r，touch -r filename filename2  使用文件中的时间设置第二个文件的时间。   </p>
-<h2 id="https-explainshell-com这是一个，超级方便的网站"><a href="#https-explainshell-com这是一个，超级方便的网站" class="headerlink" title="https://explainshell.com这是一个，超级方便的网站"></a><a href="https://explainshell.com" target="_blank" rel="noopener">https://explainshell.com</a>这是一个，超级方便的网站</h2><pre><code>用法：进入首页，在搜索框中输入命令，下方自动出现英文解释。无需FQ就可以使用。
-</code></pre><p><img src="https://raw.githubusercontent.com/xiangchangjiang/blog-generator/master/images/explainshell.jpg" alt></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1746,7 +1780,7 @@ false
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
